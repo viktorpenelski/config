@@ -1,11 +1,3 @@
-# To include in .bashrc:
-#
-# BASH_ALIASES_PATH="~/.bash_aliases"
-# 
-# if [ -f $BASH_ALIASES_PATH ]; then
-#   . $BASH_ALIASES_PATH
-# fi
-
 alias ll="ls -alF"
 alias ls='ls --color=auto'
 

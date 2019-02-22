@@ -1,7 +1,3 @@
-# To include in ~/.gitconfig:
-# [include]
-#   path = PATH_TO_THIS_FILE/.gitconfig_alias
-
 [alias]
 	st = status -s
 	cmt = commit -m
