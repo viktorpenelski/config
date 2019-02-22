@@ -1,0 +1,20 @@
+# To include in ~/.gitconfig:
+# [include]
+#   path = PATH_TO_THIS_FILE/.gitconfig_alias
+
+[alias]
+	st = status -s
+	cmt = commit -m
+	br = branch
+	co = checkout
+	brn = symbolic-ref --short HEAD
+	up = "!git push -u origin $(git brn)"
+	down = "!git pull origin $(git brn)"
+	history = "log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate"
+	logtree = "log --graph --oneline --decorate --all"
+	last = log -1 HEAD
+	unstage = reset -q HEAD --
+	amend = commit --amend --no-edit
+	amsg = commit --amend -m
+	uncommit = reset --mixed HEAD~
+	all = "!f() { ls -R -d */.git | xargs -I{} bash -c \"echo {} && git -C {}/../ $1\"; }; f"
