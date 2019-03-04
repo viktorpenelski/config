@@ -31,7 +31,7 @@ mcb() {
 alias gcb="./gradlew clean build"
 
 lsrec() {
-	cmd="find . -type f -exec ls -alt {} +"
+	cmd="find . -type f -exec ls -lt {} +"
 
 	default=20
 	help="Finds all files recursively in nested directories and lists the first ${default} ordered by last modified.
