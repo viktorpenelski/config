@@ -2,15 +2,21 @@
 
 # Set bin folder based on OS. Include new systems here.
 case "$OSTYPE" in
-  msys*) export VIK_BIN="$VIK_CONFIG/bin/win" ;;
+  msys*) 
+    VIK_BIN="$VIK_CONFIG/bin/win"
+    if [ -f "$VIK_CONFIG/.bash_aliases_win" ]; then
+      . "$VIK_CONFIG/.bash_aliases_win"
+    fi
+  ;;
   *) echo "unknown OS: $OSTYPE" ;;
 esac
 
-
+# Add custom binaries to PATH
 if [ -d "$VIK_BIN" ]; then
     PATH="$PATH:$VIK_BIN"
 fi
 
+# Add bash aliases from config basepath.
 if [ -f "$VIK_CONFIG/.bash_aliases" ]; then
   . "$VIK_CONFIG/.bash_aliases"
 fi

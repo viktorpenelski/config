@@ -52,11 +52,3 @@ lsrec() {
 
 	eval "$cmd"
 }
-
-# WINDOWS SPECIFIC
-# TODO(vic) consider moving to another file.
-
-open() {
-	explorer.exe .
-}
-
