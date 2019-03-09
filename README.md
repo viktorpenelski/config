@@ -1,18 +1,20 @@
 # Shared config files
 
-### `bash_aliases`:
-To include in `~/.bashrc`:
+### bootstrap:
+
+Add in `~/.bashrc`:
+
 ```
-BASH_ALIASES_PATH="~/.bash_aliases"
-if [ -f $BASH_ALIASES_PATH ]; then
-  . $BASH_ALIASES_PATH
+VIK_CONFIG="/c/Sync/config"
+
+if [ -f "$VIK_CONFIG/.bash_variables" ]; then
+  . "$VIK_CONFIG/.bash_variables"
 fi
 ```
 
 ### `gitconfig_alias`:
-To include in `~/.gitconfig`:
+Add in `~/.gitconfig`:
 ```
 [include]
   path = PATH_TO_THIS_FILE/.gitconfig_alias
 ```
-

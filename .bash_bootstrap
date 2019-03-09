@@ -1,0 +1,18 @@
+# Relies on a correctly set $VIK_CONFIG, pointing to this base dir.
+
+# Set bin folder based on OS. Include new systems here.
+case "$OSTYPE" in
+  msys*) export VIK_BIN="$VIK_CONFIG/bin/win" ;;
+  *) echo "unknown OS: $OSTYPE" ;;
+esac
+
+
+if [ -d "$VIK_BIN" ]; then
+    PATH="$PATH:$VIK_BIN"
+fi
+
+if [ -f "$VIK_CONFIG/.bash_aliases" ]; then
+  . "$VIK_CONFIG/.bash_aliases"
+fi
+
+export VIK_SCRIPTS="$VIK_CONFIG/scripts"
