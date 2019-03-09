@@ -4,11 +4,11 @@
 
 Add in `~/.bashrc`:
 
-```
+```bash
 VIK_CONFIG="/c/Sync/config"
 
-if [ -f "$VIK_CONFIG/.bash_variables" ]; then
-  . "$VIK_CONFIG/.bash_variables"
+if [ -f "$VIK_CONFIG/.bash_bootstrap" ]; then
+  . "$VIK_CONFIG/.bash_bootstrap"
 fi
 ```
 
