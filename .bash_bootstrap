@@ -1,14 +1,19 @@
 # Relies on a correctly set $VIK_CONFIG, pointing to this base dir.
 
 # Set bin folder based on OS. Include new systems here.
-case "$OSTYPE" in
-  msys*) 
+
+_os=$OSTYPE
+
+case "$_os" in
+  msys) 
     VIK_BIN="$VIK_CONFIG/bin/win"
     if [ -f "$VIK_CONFIG/.bash_aliases_win" ]; then
       . "$VIK_CONFIG/.bash_aliases_win"
     fi
   ;;
-  *) echo "unknown OS: $OSTYPE" ;;
+  linux-gnu)
+  ;;
+  *) echo "unknown OS: $_os" ;;
 esac
 
 # Add custom binaries to PATH
