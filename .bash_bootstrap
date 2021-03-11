@@ -12,6 +12,8 @@ case "$_os" in
     fi
   ;;
   linux-gnu)
+    VIK_BIN="$VIK_CONFIG/bin/gnu"
+    gsettings reset org.gnome.desktop.input-sources xkb-options
   ;;
   *) echo "unknown OS: $_os" ;;
 esac

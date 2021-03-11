@@ -6,6 +6,10 @@ alias ll='ls -lF --color=auto'
 alias la='ls -alF --color=auto'
 alias ls='ls -F'
 
+blog() {
+	code "$VIK_CONFIG/../notes-md/Ideas/Blog/"
+}
+
 port-pid() {
 	port=$1
 
@@ -57,3 +61,24 @@ lsrec() {
 
 	eval "$cmd"
 }
+
+HUGO_VERSION='0.74.3'
+alias hugo="docker run --rm -it \
+  -v $(pwd):/src \
+  -w /src/ \
+  --user $(id -u):$(id -g) \
+  klakegg/hugo:$HUGO_VERSION"
+
+alias hugo-server="docker run --rm -it \
+  -v $(pwd):/src \
+  -w /src/ \
+  -p 1313:1313 \
+  --user $(id -u):$(id -g) \
+  klakegg/hugo:$HUGO_VERSION \
+  server"
+
+alias hugo-shell="docker run --rm -it \
+  -v $(pwd):/src \
+  -w /src/ \
+  klakegg/hugo:$HUGO_VERSION-alpine \
+  shell"
